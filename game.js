@@ -18,14 +18,14 @@ function startGame() {
             squares[obj].classList.add('flashy');
             squares[obj].setAttribute('data-id', obj);
             previousIndex = obj;
-        }, 1000 * (index + 1));
+        }, 500 * (index + 1));
     });
     setTimeout(function() {
         for (var i = 0; i < squares.length; i++) {
             squares[i].addEventListener('click', registerUserClick, false);
             squares[i].style.cursor = "pointer";
         }
-    }, (sequenceLength + 1) * 1000);
+    }, (sequenceLength + 1) * 500);
 }
 
 function registerUserClick() {
