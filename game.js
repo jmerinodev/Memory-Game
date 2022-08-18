@@ -3,7 +3,7 @@ var squares = document.getElementsByClassName('square');
 var score = document.getElementsByClassName('score');
 var userAnswers = [];
 var sequence = [];
-var sequenceLength = 2;
+var sequenceLength = 1;
 
 function startGame() {
     hideInstructions();
@@ -54,7 +54,7 @@ function checkAnswers() {
         var title = document.querySelector('.level');
         title.innerHTML = "GAME OVER";
         userAnswers = [];
-        sequenceLength = 2;
+        sequenceLength = 1;
         resetGame();
     }
 }
