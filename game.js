@@ -54,7 +54,7 @@ function checkAnswers() {
         var title = document.querySelector('.level');
         title.innerHTML = "GAME OVER";
         userAnswers = [];
-        sequenceLength = 4;
+        sequenceLength = 2;
         resetGame();
     }
 }
