@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>Memory Game</title>
+    </head>
+    <body>
+        <div class="instructions">
+            <h1>Memory Game</h1>
+            <p>Al empezar el juego los cuadrados parpadearan en secuencia.</p>
+            <p>Replica la sequencia para avanzar de nivel, cada vez sera mas dificil 🙂</p>
+            <button id="start">Empezar</button>
+        </div>
+        <div class="current-level">
+            <h1 class="level">Level <span class="score">1</span></h1>
+        </div>
+        <div class="container">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+    </body>
+    <script src="game.js"></script>
+</html>
