@@ -36,19 +36,15 @@ button {
 }
 
 .flashy {
-    animation: flash 0.5s;
+    animation: flash 0.2s;
 }
 
 @-webkit-keyframes flash {
-    0% { background-color: #DDA813; }
-    33% { background-color: #EABC30; }
-    67% { background-color: #F1C74B; }
-    100% { background-color: #F6D368; }
+    0% { background-color: #F6D368; }
+    100% {background-color: #F6D368;}
 }
 
 @keyframes flash {
-    0% { background-color: #DDA813; }
-    33% { background-color: #EABC30; }
-    67% { background-color: #F1C74B; }
-    100% { background-color: #F6D368; }
+    0% { background-color: #F6D368; }
+    100% {background-color: #F6D368;}
 }
