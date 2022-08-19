@@ -5,12 +5,14 @@ var timeBetweenAnimations = 600;
 var userAnswers = [];
 var sequence = [];
 var sequenceLength = 1;
+var userClickCount = 0;
 
 startBtn.addEventListener('click', startGame, false);
 
 function startGame() {
     hideInstructions();
     sequence = randomSequence(sequenceLength);
+    userClickCount = 0;
     var previousIndex = null;
     sequence.forEach(function(obj, index) {
         setTimeout(function() {
@@ -33,10 +35,11 @@ function startGame() {
 
 function registerUserClick() {
     var squareId = this.getAttribute('data-id');
-    if (squareId == null) {
+    if (squareId == null || sequence[userClickCount] != squareId) {
         resetGame();
     }
     else {
+        userClickCount++;
         userAnswers.push(Number(squareId));
         this.classList.remove('flashy');
         this.offsetHeight; //force repaint to trigger animation
