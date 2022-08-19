@@ -13,16 +13,12 @@ function startGame() {
     hideInstructions();
     sequence = randomSequence(sequenceLength);
     userClickCount = 0;
-    var previousIndex = null;
     sequence.forEach(function(obj, index) {
         setTimeout(function() {
-            if (previousIndex != null) {
-                squares[previousIndex].classList.remove('flashy');
-                squares[previousIndex].offsetHeight; //force repaint to trigger animation
-            }
+            squares[obj].classList.remove('flashy');
+            squares[obj].offsetHeight; //force repaint to trigger animation on next code line
             squares[obj].classList.add('flashy');
             squares[obj].setAttribute('data-id', obj);
-            previousIndex = obj;
         }, timeBetweenAnimations * (index + 1));
     });
     setTimeout(function() {
@@ -66,7 +62,6 @@ function checkAnswers() {
     }
 }
 
-//checks if user answers array is equal to the sequence array
 function compareArrays(a, b) {
     for (var i = 0; i < a.length; ++i) {
         if (a[i] !== b[i]) return false;
