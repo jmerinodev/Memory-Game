@@ -33,11 +33,21 @@ function startGame() {
 
 function registerUserClick() {
     var squareId = this.getAttribute('data-id');
-    (squareId == null) ? resetGame() : userAnswers.push(Number(squareId));
-
-    if (userAnswers.length == sequence.length) {
-        checkAnswers();
+    if (squareId == null) {
+        resetGame();
     }
+    else {
+        userAnswers.push(Number(squareId));
+        this.classList.remove('flashy');
+        this.offsetHeight; //force repaint to trigger animation
+        this.classList.add('flashy');
+    }
+
+    setTimeout(function() {
+        if (userAnswers.length == sequence.length) {
+            checkAnswers();
+        }
+    }, 1000);
 }
 
 function checkAnswers() {
