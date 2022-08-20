@@ -5,14 +5,14 @@ var timeBetweenAnimations = 600;
 var userAnswers = [];
 var sequence = [];
 var sequenceLength = 1;
-var userClickCount = 0;
+var levelUserClickCount = 0;
 
 startBtn.addEventListener('click', startGame, false);
 
 function startGame() {
     hideInstructions();
     sequence = randomSequence(sequenceLength);
-    userClickCount = 0;
+    levelUserClickCount = 0;
     sequence.forEach(function(obj, index) {
         setTimeout(function() {
             squares[obj].classList.remove('flashy');
@@ -31,11 +31,11 @@ function startGame() {
 
 function registerUserClick() {
     var squareId = this.getAttribute('data-id');
-    if (squareId == null || sequence[userClickCount] != squareId) {
+    if (squareId == null || sequence[levelUserClickCount] != squareId) {
         resetGame();
     }
     else {
-        userClickCount++;
+        levelUserClickCount++;
         userAnswers.push(Number(squareId));
         this.classList.remove('flashy');
         this.offsetHeight; //force repaint to trigger animation
@@ -44,29 +44,17 @@ function registerUserClick() {
 
     setTimeout(function() {
         if (userAnswers.length == sequence.length) {
-            checkAnswers();
+            advanceLevel();
         }
     }, 1000);
 }
 
-function checkAnswers() {
-    if (compareArrays(userAnswers, sequence)) {
-        score[0].innerHTML = Number(score[0].innerHTML) + 1;
-        userAnswers = [];
-        sequenceLength++;
-        resetSquares();
-        startGame();
-    }
-    else {
-        resetGame();
-    }
-}
-
-function compareArrays(a, b) {
-    for (var i = 0; i < a.length; ++i) {
-        if (a[i] !== b[i]) return false;
-    }
-    return true;
+function advanceLevel() {
+    score[0].innerHTML = Number(score[0].innerHTML) + 1;
+    userAnswers = [];
+    sequenceLength++;
+    resetSquares();
+    startGame();
 }
 
 function randomSequence(num) {
