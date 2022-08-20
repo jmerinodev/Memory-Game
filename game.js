@@ -89,7 +89,7 @@ function resetSquares() {
 }
 
 function resetGame() {
-    document.querySelector('.level').innerHTML = "GAME OVER";
+    document.querySelector('.level').innerHTML = "Game Over";
     userAnswers = [];
     sequenceLength = 1;
     setTimeout(function() {
