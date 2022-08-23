@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Heebo&family=Permanent+Marker&family=Roboto&display=swap');
 
+body {
+    background-color: #2B87D1;
+    color: white;
+    margin: 0px;
+}
+
+button {
+    background-color: #FFD154;
+    cursor: pointer;
+    padding: 15px 25px;
+    border: 0px;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #FFFFFF;
+}
+
 .container {
     width: 350px;
     display: flex;
@@ -19,16 +39,10 @@
     display: none;
 }
 
-button {
-    cursor: pointer;
-    padding: 10px;
-    background: transparent;
-    font-family: 'Roboto', sans-serif;
-}
-
 .square {
-    background-color: #eee;
+    background-color: #2472C0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3px;
     cursor: default;
     width: 70px;
     height: 70px;
@@ -40,11 +54,11 @@ button {
 }
 
 @-webkit-keyframes flash {
-    0% { background-color: #F6D368; }
-    100% {background-color: #F6D368;}
+    0% { background-color: #FFFFFF; }
+    100% {background-color: #FFFFFF;}
 }
 
 @keyframes flash {
-    0% { background-color: #F6D368; }
-    100% {background-color: #F6D368;}
+    0% { background-color: #FFFFFF; }
+    100% {background-color: #FFFFFF;}
 }
